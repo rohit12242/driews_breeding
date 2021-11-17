@@ -7,23 +7,35 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+import { SnackbarProvider } from 'notistack';
+import { Slide } from '@mui/material';
+import NotFound from './component/notFound';
 
 function App() {
   return (
     <ThemeConfig>
-      <Router>
-        <Switch>
-          <Route exact path='/'>
-            <Home />
-          </Route>
-          <Route exact path='/driews'>
-            <DriewsList />
-          </Route>
-          <Route exact path='/breeding'>
-            <Breeding />
-          </Route>
-        </Switch>
-      </Router>
+      <SnackbarProvider anchorOrigin={{
+        vertical: 'top',
+        horizontal: 'right',
+      }} TransitionComponent={Slide}
+      >
+        <Router>
+          <Switch>
+            <Route exact path='/'>
+              <Home />
+            </Route>
+            <Route exact path='/driews/:address'>
+              <DriewsList />
+            </Route>
+            <Route exact path='/breeding'>
+              <Breeding />
+            </Route>
+            <Route>
+              <NotFound />
+            </Route>
+          </Switch>
+        </Router>
+      </SnackbarProvider>
     </ThemeConfig>
   );
 }
