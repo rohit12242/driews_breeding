@@ -1,9 +1,9 @@
 import { Box, Typography, Button, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 // import DriewsList from '../component/driewsList';
 import { FaCircle } from "react-icons/fa";
 import { useState, useCallback } from 'react';
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 import Web3 from "web3";
 import Web3Modal from "web3modal";
 import { useHistory } from 'react-router';
@@ -43,8 +43,13 @@ export default function Home() {
     // const [installMetamaskMsg, setinstallMetamaskMsg] = useState(false)
     // const [loggedInAccount, setloggedInAccount] = useState()
     let history = useHistory();
-    const { enqueueSnackbar, closeSnackbar } = useSnackbar();
+    const { enqueueSnackbar } = useSnackbar();
 
+
+    const routeToDriews = (address) =>{
+        // const accountAddress = loggedInAccount;
+        history.push(`/driews/${address}`)
+    }
     //function to connect to metamask
     const loadWeb3Modal = useCallback(async () => {
         // console.log("load web3 modal is called")
@@ -57,7 +62,7 @@ export default function Home() {
             // const web3 = new Web3(provider);
             // setprovider(provider)
             setInjectedProvider(new ethers.providers.Web3Provider(provider));
-            // console.log("value of injected provider::",injectedProvider);
+            console.log("value of injected provider::",injectedProvider);
             // setisLoggedIn(true);
 
             const web3 = new Web3(provider)
@@ -110,7 +115,7 @@ export default function Home() {
             setinstallMetamaskMsg(true); */
             enqueueSnackbar("Install Metamask",{variant:'error'})
         }
-
+// eslint-disable-next-line
     }, [setInjectedProvider]);
 
    /*  useEffect(() => {
@@ -119,14 +124,11 @@ export default function Home() {
         }
     }, [loadWeb3Modal]); */
 
-    const routeToDriews = (address) =>{
-        // const accountAddress = loggedInAccount;
-        history.push(`/driews/${address}`)
-    }
+    
 
-    const showNotification = () =>{
-        enqueueSnackbar('I love hooks',{variant:'error'});
-    }
+    // const showNotification = () =>{
+    //     enqueueSnackbar('I love hooks',{variant:'error'});
+    // }
 
     return (
         <Box >

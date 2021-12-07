@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/6460dc54-1d79-46a2-aa5d-a237f6c134a6/resourceGroups/Driews/providers/Microsoft.Web/sites/driewsbreeding",
+    "appService.deploySubpath": "."
+}

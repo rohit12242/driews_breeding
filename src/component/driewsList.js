@@ -1,6 +1,6 @@
-import { Box, Typography, Button, Grid, Divider, Stack, Popover } from '@mui/material';
+import { Box, Typography, Button, Grid, Divider, Stack } from '@mui/material';
 // import human1 from '../assets/human1.gif';
-import animal1 from '../assets/da34.webp';
+// import animal1 from '../assets/da34.webp';
 // import robot1 from '../assets/human4.webp';
 import './design.css';
 import { useState, useEffect } from 'react';
@@ -40,11 +40,11 @@ export default function DriewsList() {
     const [robotSelection, setRobotSelection] = useState([])
     const [breedBtnActive, setbreedBtnActive] = useState(false)
     const [dataLoaded, setdataLoaded] = useState(false)
-    const [driewList, setdriewList] = useState()
+    // const [driewList, setdriewList] = useState()
     const [humans, sethumans] = useState([])
     const [animals, setanimals] = useState([])
     const [robots, setrobots] = useState([])
-    const { enqueueSnackbar, closeSnackbar } = useSnackbar();
+    const { enqueueSnackbar } = useSnackbar();
     const [selectedHuman, setselectedHuman] = useState([])
     const [selectedAnimal, setselectedAnimal] = useState([])
     const [selectedRobot, setselectedRobot] = useState([])
@@ -123,7 +123,7 @@ export default function DriewsList() {
             setrobots(robotList);
         }
         getNfts();
-    }, [dataLoaded])
+    }, [dataLoaded,address])
     const tokenSelection = (i, type, value) => {
         if (type === 'Human') {
             if (humanSelection[i] === true) {
@@ -354,6 +354,7 @@ export default function DriewsList() {
             // console.log("value of secondToken::", secondToken);
             // console.log("value of address::", address);
             const result = await driewsContract.methods.crossBreeding(firstToken, secondToken).send({ from: address })
+            console.log("value of reuslt",result);
             updateMetaData("test", type)
             // console.log("result of transaction:::", result);
             enqueueSnackbar("Transaction Succeed", { variant: 'success' })
@@ -459,6 +460,7 @@ export default function DriewsList() {
             // const result = await axios.post(`https://restapidriews.azurewebsites.net/api/metadata/${totalSupply-1}`, data);
             //vinay azure
             const result = await axios.post(`https://driewsrestapi.azurewebsites.net/api/metadata/${totalSupply-1}`, data);
+            console.log("result value::",result);
             // const result = await axios.post(`http://localhost:4000/api/metadata/${totalSupply-1}`, data);
             // console.log("value of response::", result.data);
             return true;
@@ -469,26 +471,27 @@ export default function DriewsList() {
 
     }
 
-    const mint = async () => {
-        // console.log("value of address:::",address);
-        await window.web3.currentProvider.enable();
-        const web3 = new Web3(window.web3.currentProvider);
-        const driewsContract = new web3.eth.Contract(driewsAbi, driewsContractAddr)
-        try {
-            enqueueSnackbar("Txn is in process", { variant: 'info' })
-            const result = await driewsContract.methods.mintDriews().send({ from: address })
-            updateMetaData('mint','MINT')
+    //direct minting for nft
+    // const mint = async () => {
+    //     // console.log("value of address:::",address);
+    //     await window.web3.currentProvider.enable();
+    //     const web3 = new Web3(window.web3.currentProvider);
+    //     const driewsContract = new web3.eth.Contract(driewsAbi, driewsContractAddr)
+    //     try {
+    //         enqueueSnackbar("Txn is in process", { variant: 'info' })
+    //         const result = await driewsContract.methods.mintDriews().send({ from: address })
+    //         updateMetaData('mint','MINT')
             
-            console.log("result of transaction:::", result);
+    //         console.log("result of transaction:::", result);
 
-            enqueueSnackbar("Transaction Succeed", { variant: 'success' })
-        }
-        catch (error) {
-            enqueueSnackbar("Transaction failed", { variant: 'error' })
+    //         enqueueSnackbar("Transaction Succeed", { variant: 'success' })
+    //     }
+    //     catch (error) {
+    //         enqueueSnackbar("Transaction failed", { variant: 'error' })
 
-            console.log("value of error::", error);
-        }
-    }
+    //         console.log("value of error::", error);
+    //     }
+    // }
 
 
     return (

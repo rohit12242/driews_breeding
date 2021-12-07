@@ -1,17 +1,17 @@
 // ----------------------------------------------------------------------
 
-import SharpGrotesk from '../fonts/SharpGroteskDBMedium22.ttf'
+// import SharpGrotesk from '../fonts/SharpGroteskDBMedium22.ttf'
 
 function pxToRem(value) {
   return `${value / 16}rem`;
 }
 
-const SharpGro = {
-  fontFamily: 'SharpGrotesk ',
-  fontStyle: 'normal',
-  fontWeight: 100,
-  src: `url(${SharpGrotesk})`
-}
+// const SharpGro = {
+//   fontFamily: 'SharpGrotesk ',
+//   fontStyle: 'normal',
+//   fontWeight: 100,
+//   src: `url(${SharpGrotesk})`
+// }
 
 function responsiveFontSizes({ sm, md, lg }) {
   return {
