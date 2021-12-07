@@ -1,9 +1,16 @@
 // ----------------------------------------------------------------------
 
-
+import SharpGrotesk from '../fonts/SharpGroteskDBMedium22.ttf'
 
 function pxToRem(value) {
   return `${value / 16}rem`;
+}
+
+const SharpGro = {
+  fontFamily: 'SharpGrotesk ',
+  fontStyle: 'normal',
+  fontWeight: 100,
+  src: `url(${SharpGrotesk})`
 }
 
 function responsiveFontSizes({ sm, md, lg }) {
@@ -20,7 +27,8 @@ function responsiveFontSizes({ sm, md, lg }) {
   };
 }
 
-const FONT_PRIMARY = 'sans-serif,Monaco';
+// const FONT_PRIMARY = 'sans-serif,Monaco,SharpGro';
+const FONT_PRIMARY = 'sans-serif,Monaco,SharpGro';
 
 const typography = {
   fontFamily: FONT_PRIMARY,
