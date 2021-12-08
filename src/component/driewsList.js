@@ -472,26 +472,26 @@ export default function DriewsList() {
     }
 
     //direct minting for nft
-    // const mint = async () => {
-    //     // console.log("value of address:::",address);
-    //     await window.web3.currentProvider.enable();
-    //     const web3 = new Web3(window.web3.currentProvider);
-    //     const driewsContract = new web3.eth.Contract(driewsAbi, driewsContractAddr)
-    //     try {
-    //         enqueueSnackbar("Txn is in process", { variant: 'info' })
-    //         const result = await driewsContract.methods.mintDriews().send({ from: address })
-    //         updateMetaData('mint','MINT')
+    const mint = async () => {
+        // console.log("value of address:::",address);
+        await window.web3.currentProvider.enable();
+        const web3 = new Web3(window.web3.currentProvider);
+        const driewsContract = new web3.eth.Contract(driewsAbi, driewsContractAddr)
+        try {
+            enqueueSnackbar("Txn is in process", { variant: 'info' })
+            const result = await driewsContract.methods.mintDriews().send({ from: address })
+            updateMetaData('mint','MINT')
             
-    //         console.log("result of transaction:::", result);
+            console.log("result of transaction:::", result);
 
-    //         enqueueSnackbar("Transaction Succeed", { variant: 'success' })
-    //     }
-    //     catch (error) {
-    //         enqueueSnackbar("Transaction failed", { variant: 'error' })
+            enqueueSnackbar("Transaction Succeed", { variant: 'success' })
+        }
+        catch (error) {
+            enqueueSnackbar("Transaction failed", { variant: 'error' })
 
-    //         console.log("value of error::", error);
-    //     }
-    // }
+            console.log("value of error::", error);
+        }
+    }
 
 
     return (
@@ -607,7 +607,7 @@ export default function DriewsList() {
                 }
 
             </Box>
-            {/* <Button variant='contained' onClick={mint}>testingOwnerMint</Button> */}
+            <Button sx={{marginLeft:'45%',marginTop:'10px'}} variant='outlined' size='large' color='warning' onClick={mint}>OwnerMint</Button>
         </Box>
     );
 }
