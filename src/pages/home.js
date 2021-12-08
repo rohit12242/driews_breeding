@@ -72,7 +72,7 @@ export default function Home() {
             const networkId = await web3.eth.net.getId();
             console.log("value of networkId::", networkId);
             
-            if (networkId === 4) {
+            if (networkId === 1) {
                 // setchainCorrect(false);
                 // setaccountConnectedMsg(false)
                 routeToDriews(accounts[0]);
