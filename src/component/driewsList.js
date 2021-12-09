@@ -446,7 +446,7 @@ export default function DriewsList() {
                 ],
                 "description": "Minted outside breeding",
                 "external_url": "https://example.com/?token_id=1",
-                "image": "https://restapidriews.azurewebsites.net/animation",
+                "image": "https://driewsrestapi.azurewebsites.net/animation",
                 "name": "Minted",
                 "animationFlag": true
             }
