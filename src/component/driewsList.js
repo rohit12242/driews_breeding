@@ -29,8 +29,8 @@ const web3Modal = new Web3Modal({
     providerOptions // required
 });
 
-const rareTokenId = ['70481530999255192193428858215108995764418775728404228853434173036543984271361','70481530999255192193428858215108995764418775728404228853434173067330309849089','70481530999255192193428858215108995764418775728404228853434173091519565660161','70481530999255192193428858215108995764418775728404228853434173160788798210049','70481530999255192193428858215108995764418775728404228853434173184978054021121','70481530999255192193428858215108995764418775728404228853434173186077565648897','70481530999255192193428858215108995764418775728404228853434173103614193565697','70481530999255192193428858215108995764418775728404228853434173140997588910081','70481530999255192193428858215108995764418775728404228853434173183878542393345']
-const driewsContractAddr='0x1daFd73Fc64215FfD60688EC6F623d84bFCc695F';
+const rareTokenId = ['70481530999255192193428858215108995764418775728404228853434173036543984271361', '70481530999255192193428858215108995764418775728404228853434173067330309849089', '70481530999255192193428858215108995764418775728404228853434173091519565660161', '70481530999255192193428858215108995764418775728404228853434173160788798210049', '70481530999255192193428858215108995764418775728404228853434173184978054021121', '70481530999255192193428858215108995764418775728404228853434173186077565648897', '70481530999255192193428858215108995764418775728404228853434173103614193565697', '70481530999255192193428858215108995764418775728404228853434173140997588910081', '70481530999255192193428858215108995764418775728404228853434173183878542393345']
+const driewsContractAddr = '0x1daFd73Fc64215FfD60688EC6F623d84bFCc695F';
 
 
 export default function DriewsList() {
@@ -95,8 +95,8 @@ export default function DriewsList() {
             for (let i = 0; i < nftCount; i++) {
                 //Collection name
                 if (data[i].collection.name === 'Driews') {
-                //test
-                // if (data[i].collection.name === 'Testing Driews') {
+                    //test
+                    // if (data[i].collection.name === 'Testing Driews') {
                     // console.log("value of token id:::", data[i].token_id);
                     let temp = {};
                     temp.tokenId = data[i].token_id
@@ -123,7 +123,7 @@ export default function DriewsList() {
             setrobots(robotList);
         }
         getNfts();
-    }, [dataLoaded,address])
+    }, [dataLoaded, address])
     const tokenSelection = (i, type, value) => {
         if (type === 'Human') {
             if (humanSelection[i] === true) {
@@ -290,13 +290,13 @@ export default function DriewsList() {
             const robot = selectedRobot[0];
             enqueueSnackbar("Txn is in process", { variant: 'info' })
             const result = await driewsContract.methods.superBreeding(human.tokenId, animal.tokenId, robot.tokenId).send({ from: address })
-            if(rareTokenId.includes(human.tokenId) || rareTokenId.includes(animal.tokenId) || rareTokenId.includes(robot.tokenId)){
+            if (rareTokenId.includes(human.tokenId) || rareTokenId.includes(animal.tokenId) || rareTokenId.includes(robot.tokenId)) {
                 updateMetaData("super", 'RARE')
             }
-            else{
+            else {
                 updateMetaData("super", 'AHR')
             }
-            
+
             console.log("result of transaction:::", result);
 
             enqueueSnackbar("Transaction Succeed", { variant: 'success' })
@@ -345,7 +345,7 @@ export default function DriewsList() {
                 type = 'AH'
             }
 
-            if(rareTokenId.includes(firstToken)|| rareTokenId.includes(secondToken)){
+            if (rareTokenId.includes(firstToken) || rareTokenId.includes(secondToken)) {
                 type = 'RARE'
             }
 
@@ -354,7 +354,7 @@ export default function DriewsList() {
             // console.log("value of secondToken::", secondToken);
             // console.log("value of address::", address);
             const result = await driewsContract.methods.crossBreeding(firstToken, secondToken).send({ from: address })
-            console.log("value of reuslt",result);
+            console.log("value of reuslt", result);
             updateMetaData("test", type)
             // console.log("result of transaction:::", result);
             enqueueSnackbar("Transaction Succeed", { variant: 'success' })
@@ -387,7 +387,7 @@ export default function DriewsList() {
                 "external_url": "https://example.com/?token_id=1",
                 "image": "https://driewsimage.blob.core.windows.net/driewsnft/AH.jpg",
                 "name": "AH",
-                "animationFlag":false
+                "animationFlag": false
             }
         }
         if (type === 'HR') {
@@ -399,7 +399,7 @@ export default function DriewsList() {
                 "external_url": "https://example.com/?token_id=1",
                 "image": "https://driewsimage.blob.core.windows.net/driewsnft/HR.jpg",
                 "name": "HR",
-                "animationFlag":false
+                "animationFlag": false
             }
         }
         if (type === 'AR') {
@@ -411,7 +411,7 @@ export default function DriewsList() {
                 "external_url": "https://example.com/?token_id=1",
                 "image": "https://driewsimage.blob.core.windows.net/driewsnft/RA.jpg",
                 "name": "AR",
-                "animationFlag":false
+                "animationFlag": false
             }
         }
         if (type === 'AHR') {
@@ -423,7 +423,7 @@ export default function DriewsList() {
                 "external_url": "https://example.com/?token_id=1",
                 "image": "https://driewsimage.blob.core.windows.net/driewsnft/HRA.jpg",
                 "name": "AHR",
-                "animationFlag":false
+                "animationFlag": false
             }
         }
         if (type === 'RARE') {
@@ -435,11 +435,11 @@ export default function DriewsList() {
                 "external_url": "https://example.com/?token_id=1",
                 "image": "https://driewsimage.blob.core.windows.net/driewsnft/Rare_final.jpg",
                 "name": "RARE",
-                "animationFlag":false
+                "animationFlag": false
             }
         }
 
-        if(type==='MINT'){
+        if (type === 'MINT') {
             data = {
                 "attributes": [
 
@@ -459,8 +459,8 @@ export default function DriewsList() {
             //my azure
             // const result = await axios.post(`https://restapidriews.azurewebsites.net/api/metadata/${totalSupply-1}`, data);
             //vinay azure
-            const result = await axios.post(`https://driewsrestapi.azurewebsites.net/api/metadata/${totalSupply-1}`, data);
-            console.log("result value::",result);
+            const result = await axios.post(`https://driewsrestapi.azurewebsites.net/api/metadata/${totalSupply - 1}`, data);
+            console.log("result value::", result);
             // const result = await axios.post(`http://localhost:4000/api/metadata/${totalSupply-1}`, data);
             // console.log("value of response::", result.data);
             return true;
@@ -480,8 +480,8 @@ export default function DriewsList() {
         try {
             enqueueSnackbar("Txn is in process", { variant: 'info' })
             const result = await driewsContract.methods.mintDriews().send({ from: address })
-            updateMetaData('mint','MINT')
-            
+            updateMetaData('mint', 'MINT')
+
             console.log("result of transaction:::", result);
 
             enqueueSnackbar("Transaction Succeed", { variant: 'success' })
@@ -495,10 +495,10 @@ export default function DriewsList() {
 
 
     return (
-        <Box >
-            <Stack direction='row' sx={{ mt: 4 }} spacing={32}>
+        <Box style={{ width: '100%', height: '100%', transform: 'rotate(-180deg)' }}>
+            <Stack direction='row' sx={{ paddingTop: 4 }} spacing={32}>
                 <Box sx={{ flexGrow: '0.78' }}></Box>
-                <Typography variant='h3' >Your Driews Collection</Typography>
+                <Typography variant='h2' sx={{ textAlign: 'center', mt: 8, fontWeight: '800', letterSpacing: '2px' }}>YOUR DRIEWS</Typography>
                 <Box>
                     {/* <Button aria-describedby={id} variant='outlined' color='warning' onClick={handleClick}>0xD5Cd7dC0.........2bF39B5d</Button> */}
                     <Button variant='outlined' color='warning' onClick={logoutOfWeb3Modal}>{formatter(address)}</Button>
@@ -600,14 +600,18 @@ export default function DriewsList() {
 
                 </Grid>
             </Grid>
-            <Box sx={{ mt: 8, textAlign: 'center' }}>
+            <Box sx={{ mt: 6, textAlign: 'center' }}>
                 {breedBtnActive === true ?
-                    <Button variant='outlined'  size='large' color='warning' onClick={() => breeding()} >Breed</Button> :
-                    <Button variant='outlined' size='large' color='warning' disabled>Breed</Button>
+                    <Button variant='outlined' size='large' color='warning' onClick={() => breeding()} sx={{ backgroundColor: '#FCFFA3', color: '#000', height: '79.47px', width: '238.51px', borderRadius: '28px' }}><Typography variant='h3'>Breed</Typography></Button> :
+                    <Button variant='outlined' size='large' color='warning' disabled sx={{ backgroundColor: '#FCFFA3', color: '#000', height: '79.47px', width: '238.51px', borderRadius: '28px' }}><Typography variant='h3'>Breed</Typography></Button>
                 }
-
+                {address === '0x9Bd32202Ec4c0841be54E9764DF83A5F69ac0965' ?
+                    <Button sx={{ marginLeft: '45%', marginTop: '10px',backgroundColor: '#FCFFA3', color: '#000', height: '79.47px', width: '238.51px', borderRadius: '28px' }} variant='outlined'  color='warning' onClick={mint}><Typography variant='h3'>OwnerMint</Typography></Button>
+                    :
+                    <div></div>
+                }
             </Box>
-            <Button sx={{marginLeft:'45%',marginTop:'10px'}} variant='outlined' size='large' color='warning' onClick={mint}>OwnerMint</Button>
+            {/* <Button sx={{marginLeft:'45%',marginTop:'10px'}} variant='outlined' size='large' color='warning' onClick={mint}>OwnerMint</Button> */}
         </Box>
     );
 }
