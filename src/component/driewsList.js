@@ -495,7 +495,7 @@ export default function DriewsList() {
 
 
     return (
-        <Box style={{ width: '100%', height: '100%', transform: 'rotate(-180deg)' }}>
+        <Box style={{  transform: 'rotate(-180deg)' }}>
             <Stack direction='row' sx={{ paddingTop: 4 }} spacing={32}>
                 <Box sx={{ flexGrow: '0.78' }}></Box>
                 <Typography variant='h2' sx={{ textAlign: 'center', mt: 8, fontWeight: '800', letterSpacing: '2px' }}>YOUR DRIEWS</Typography>
