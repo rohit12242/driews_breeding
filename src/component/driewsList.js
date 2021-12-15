@@ -495,15 +495,17 @@ export default function DriewsList() {
 
 
     return (
-        <Box style={{  transform: 'rotate(-180deg)' }}>
-            <Stack direction='row' sx={{ paddingTop: 4 }} spacing={32}>
-                <Box sx={{ flexGrow: '0.78' }}></Box>
-                <Typography variant='h2' sx={{ textAlign: 'center', mt: 8, fontWeight: '800', letterSpacing: '2px' }}>YOUR DRIEWS</Typography>
-                <Box>
-                    {/* <Button aria-describedby={id} variant='outlined' color='warning' onClick={handleClick}>0xD5Cd7dC0.........2bF39B5d</Button> */}
-                    <Button variant='outlined' color='warning' onClick={logoutOfWeb3Modal}>{formatter(address)}</Button>
-                    {/* <Button variant='contained' onClick={logoutOfWeb3Modal} sx={{}}>disconnect</Button> */}
-                    {/* <Popover
+        // <Box style={{  transform: 'rotate(-180deg)'}}>
+        <Box style={{ minHeight:'100%', background: 'radial-gradient(92.09% 92.09% at 50%  7.91% , #27720D 0%, #BE3330 41.15%, #6242E6 67.19%, #000000 98.96%)',transform: 'rotate(-180deg)',}}>
+            <Box style={{  transform: 'rotate(-180deg)' }}>
+                <Stack direction='row' sx={{ paddingTop: 4 }} spacing={32}>
+                    <Box sx={{ flexGrow: '0.78' }}></Box>
+                    <Typography variant='h2' sx={{ textAlign: 'center', fontWeight: '800', letterSpacing: '2px' }}>YOUR DRIEWS</Typography>
+                    <Box>
+                        {/* <Button aria-describedby={id} variant='outlined' color='warning' onClick={handleClick}>0xD5Cd7dC0.........2bF39B5d</Button> */}
+                        <Button variant='outlined' color='warning' onClick={logoutOfWeb3Modal}>{formatter(address)}</Button>
+                        {/* <Button variant='contained' onClick={logoutOfWeb3Modal} sx={{}}>disconnect</Button> */}
+                        {/* <Popover
                         id={id}
                         open={open}
                         anchorEl={anchorEl}
@@ -515,103 +517,104 @@ export default function DriewsList() {
                     >
                         <Typography sx={{ p: 2,'MuiTypography-root':{color:'red'} }}>The content of the Popover.</Typography>
                     </Popover> */}
+                    </Box>
+                </Stack>
+                <Grid container sx={{ mt: 7 }} >
+                    {/* Human area */}
+                    <Grid item lg={4} xl={4} md={4} sx={{ pl: 0 }}>
+
+                        <Stack direction='row' spacing={2}>
+                            <Box >
+                                <Typography variant='h5' sx={{ textAlign: 'center' }}>Human</Typography>
+                                <Box sx={{ overflow: 'scroll', height: '500px', width: '500px' }}>
+                                    {humans.map((human, k) => {
+                                        return (
+                                            <Box sx={{ mt: 3 }}>
+                                                {human.breedingStatus === false ?
+                                                    <img onClick={() => tokenSelection(k, 'Human', human)} src={human.imgUrl} alt='human' style={humanSelection[k] === undefined ? beforeStyle : humanSelection[k] === false ? beforeStyle : afterStyle} />
+                                                    :
+                                                    <img src={human.imgUrl} alt='human' style={{
+                                                        height: '80%', width: '40%', marginLeft: 'auto', marginRight: 'auto', opacity: '0.2'
+                                                    }} />
+                                                }
+
+                                                <Typography sx={{ textAlign: 'center', mt: 1 }}>{human.name}</Typography>
+                                                <Divider sx={{ ml: 18, mr: 18, mt: 2 }}></Divider>
+                                            </Box>
+                                        )
+                                    })}
+                                </Box>
+                            </Box>
+                            <Divider orientation='vertical' sx={{ height: '550px' }}></Divider>
+                        </Stack>
+
+                    </Grid>
+                    {/* Animal area */}
+                    <Grid item lg={4} xl={4} md={4} sx={{ pl: 0 }}>
+                        <Stack direction='row' spacing={2}>
+                            <Box>
+                                <Typography variant='h5' sx={{ textAlign: 'center' }}>Animal</Typography>
+                                <Box sx={{ overflow: 'scroll', height: '500px', width: '500px' }}>
+                                    {animals.map((animal, k) => {
+                                        return (
+                                            <Box sx={{ mt: 3 }}>
+                                                {animal.breedingStatus === false ?
+                                                    <img onClick={() => tokenSelection(k, 'Animal', animal)} src={animal.imgUrl} alt='animal' style={animalSelection[k] === undefined ? beforeStyle : animalSelection[k] === false ? beforeStyle : afterStyle} />
+                                                    :
+                                                    <img src={animal.imgUrl} alt='animal' style={{
+                                                        height: '80%', width: '40%', marginLeft: 'auto', marginRight: 'auto', opacity: '0.2'
+                                                    }} />
+                                                }
+                                                <Typography sx={{ textAlign: 'center', mt: 1 }}>{animal.name}</Typography>
+                                                <Divider sx={{ ml: 18, mr: 18, mt: 2 }}></Divider>
+                                            </Box>
+                                        )
+                                    })}
+                                </Box>
+                            </Box>
+                            <Divider orientation='vertical' sx={{ height: '550px' }}></Divider>
+                        </Stack>
+                    </Grid>
+                    {/* Robot Area */}
+                    <Grid item lg={4} xl={4} md={4} sx={{ pl: 0 }}>
+                        <Stack direction='row' spacing={2}>
+                            <Box>
+                                <Typography variant='h5' sx={{ textAlign: 'center' }}>Robot</Typography>
+                                <Box sx={{ overflow: 'scroll', height: '500px', width: '500px' }}>
+                                    {robots.map((robot, k) => {
+                                        return (
+                                            <Box sx={{ mt: 3 }}>
+                                                {robot.breedingStatus === false ?
+                                                    <img onClick={() => tokenSelection(k, 'Robot', robot)} src={robot.imgUrl} alt='robot' style={robotSelection[k] === undefined ? beforeStyle : robotSelection[k] === false ? beforeStyle : afterStyle} />
+                                                    :
+                                                    <img src={robot.imgUrl} alt='robot' style={{
+                                                        height: '80%', width: '40%', marginLeft: 'auto', marginRight: 'auto', opacity: '0.2'
+                                                    }} />
+                                                }
+                                                <Typography sx={{ textAlign: 'center', mt: 1 }}>{robot.name}</Typography>
+                                                <Divider sx={{ ml: 18, mr: 18, mt: 2 }}></Divider>
+                                            </Box>
+                                        )
+                                    })}
+                                </Box>
+                            </Box>
+                        </Stack>
+
+                    </Grid>
+                </Grid>
+                <Box sx={{ mt: 6, textAlign: 'center' }}>
+                    {breedBtnActive === true ?
+                        <Button variant='outlined' size='large' color='warning' onClick={() => breeding()} sx={{ backgroundColor: '#FCFFA3', color: '#000', height: '79.47px', width: '238.51px', borderRadius: '28px' }}><Typography variant='h3'>Breed</Typography></Button> :
+                        <Button variant='outlined' size='large' color='warning' disabled sx={{ backgroundColor: '#FCFFA3', color: '#000', height: '79.47px', width: '238.51px', borderRadius: '28px' }}><Typography variant='h3'>Breed</Typography></Button>
+                    }
+                    {address === '0x9Bd32202Ec4c0841be54E9764DF83A5F69ac0965' ?
+                        <Button sx={{ marginLeft: '45%', marginTop: '10px', backgroundColor: '#FCFFA3', color: '#000', height: '79.47px', width: '238.51px', borderRadius: '28px' }} variant='outlined' color='warning' onClick={mint}><Typography variant='h3'>OwnerMint</Typography></Button>
+                        :
+                        <div></div>
+                    }
                 </Box>
-            </Stack>
-            <Grid container sx={{ mt: 7 }} >
-                {/* Human area */}
-                <Grid item lg={4} sx={{ pl: 0 }}>
-
-                    <Stack direction='row' spacing={2}>
-                        <Box >
-                            <Typography variant='h5' sx={{ textAlign: 'center' }}>Human</Typography>
-                            <Box sx={{ overflow: 'scroll', height: '500px', width: '500px' }}>
-                                {humans.map((human, k) => {
-                                    return (
-                                        <Box sx={{ mt: 3 }}>
-                                            {human.breedingStatus === false ?
-                                                <img onClick={() => tokenSelection(k, 'Human', human)} src={human.imgUrl} alt='human' style={humanSelection[k] === undefined ? beforeStyle : humanSelection[k] === false ? beforeStyle : afterStyle} />
-                                                :
-                                                <img src={human.imgUrl} alt='human' style={{
-                                                    height: '80%', width: '40%', marginLeft: 'auto', marginRight: 'auto', opacity: '0.2'
-                                                }} />
-                                            }
-
-                                            <Typography sx={{ textAlign: 'center', mt: 1 }}>{human.name}</Typography>
-                                            <Divider sx={{ ml: 18, mr: 18, mt: 2 }}></Divider>
-                                        </Box>
-                                    )
-                                })}
-                            </Box>
-                        </Box>
-                        <Divider orientation='vertical' sx={{ height: '550px' }}></Divider>
-                    </Stack>
-
-                </Grid>
-                {/* Animal area */}
-                <Grid item lg={4} sx={{ pl: 0 }}>
-                    <Stack direction='row' spacing={2}>
-                        <Box>
-                            <Typography variant='h5' sx={{ textAlign: 'center' }}>Animal</Typography>
-                            <Box sx={{ overflow: 'scroll', height: '500px', width: '500px' }}>
-                                {animals.map((animal, k) => {
-                                    return (
-                                        <Box sx={{ mt: 3 }}>
-                                            {animal.breedingStatus === false ?
-                                                <img onClick={() => tokenSelection(k, 'Animal', animal)} src={animal.imgUrl} alt='animal' style={animalSelection[k] === undefined ? beforeStyle : animalSelection[k] === false ? beforeStyle : afterStyle} />
-                                                :
-                                                <img src={animal.imgUrl} alt='animal' style={{
-                                                    height: '80%', width: '40%', marginLeft: 'auto', marginRight: 'auto', opacity: '0.2'
-                                                }} />
-                                            }
-                                            <Typography sx={{ textAlign: 'center', mt: 1 }}>{animal.name}</Typography>
-                                            <Divider sx={{ ml: 18, mr: 18, mt: 2 }}></Divider>
-                                        </Box>
-                                    )
-                                })}
-                            </Box>
-                        </Box>
-                        <Divider orientation='vertical' sx={{ height: '550px' }}></Divider>
-                    </Stack>
-                </Grid>
-                {/* Robot Area */}
-                <Grid item lg={4} sx={{ pl: 0 }}>
-                    <Stack direction='row' spacing={2}>
-                        <Box>
-                            <Typography variant='h5' sx={{ textAlign: 'center' }}>Robot</Typography>
-                            <Box sx={{ overflow: 'scroll', height: '500px', width: '500px' }}>
-                                {robots.map((robot, k) => {
-                                    return (
-                                        <Box sx={{ mt: 3 }}>
-                                            {robot.breedingStatus === false ?
-                                                <img onClick={() => tokenSelection(k, 'Robot', robot)} src={robot.imgUrl} alt='robot' style={robotSelection[k] === undefined ? beforeStyle : robotSelection[k] === false ? beforeStyle : afterStyle} />
-                                                :
-                                                <img src={robot.imgUrl} alt='robot' style={{
-                                                    height: '80%', width: '40%', marginLeft: 'auto', marginRight: 'auto', opacity: '0.2'
-                                                }} />
-                                            }
-                                            <Typography sx={{ textAlign: 'center', mt: 1 }}>{robot.name}</Typography>
-                                            <Divider sx={{ ml: 18, mr: 18, mt: 2 }}></Divider>
-                                        </Box>
-                                    )
-                                })}
-                            </Box>
-                        </Box>
-                    </Stack>
-
-                </Grid>
-            </Grid>
-            <Box sx={{ mt: 6, textAlign: 'center' }}>
-                {breedBtnActive === true ?
-                    <Button variant='outlined' size='large' color='warning' onClick={() => breeding()} sx={{ backgroundColor: '#FCFFA3', color: '#000', height: '79.47px', width: '238.51px', borderRadius: '28px' }}><Typography variant='h3'>Breed</Typography></Button> :
-                    <Button variant='outlined' size='large' color='warning' disabled sx={{ backgroundColor: '#FCFFA3', color: '#000', height: '79.47px', width: '238.51px', borderRadius: '28px' }}><Typography variant='h3'>Breed</Typography></Button>
-                }
-                {address === '0x9Bd32202Ec4c0841be54E9764DF83A5F69ac0965' ?
-                    <Button sx={{ marginLeft: '45%', marginTop: '10px',backgroundColor: '#FCFFA3', color: '#000', height: '79.47px', width: '238.51px', borderRadius: '28px' }} variant='outlined'  color='warning' onClick={mint}><Typography variant='h3'>OwnerMint</Typography></Button>
-                    :
-                    <div></div>
-                }
+                {/* <Button sx={{marginLeft:'45%',marginTop:'10px'}} variant='outlined' size='large' color='warning' onClick={mint}>OwnerMint</Button> */}
             </Box>
-            {/* <Button sx={{marginLeft:'45%',marginTop:'10px'}} variant='outlined' size='large' color='warning' onClick={mint}>OwnerMint</Button> */}
-        </Box>
+            </Box>
     );
 }

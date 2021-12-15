@@ -1,4 +1,4 @@
-import { Box, Typography, Button, Grid } from '@mui/material';
+import { Box, Typography, Button, Grid, Link } from '@mui/material';
 // import { Link } from 'react-router-dom';
 // import DriewsList from '../component/driewsList';
 // import { FaCircle } from "react-icons/fa";
@@ -131,9 +131,11 @@ export default function Home() {
     // }
 
     return (
-        <Box style={{ width: '100%', height: '100%', transform: 'rotate(-180deg)' }}>
-            <Typography variant='h2' sx={{ textAlign: 'center', mt: 8, fontWeight: '800', letterSpacing: '2px' }}>RULES</Typography>
-            {/* <List sx={{ mt: 5, ml: 15 }}>
+        // <Box style={{ }}>
+         <Box style={{minHeight:'100%', background: 'radial-gradient(92.09% 92.09% at 50%  7.91% , #27720D 0%, #BE3330 41.15%, #6242E6 67.19%, #000000 98.96% )',transform: 'rotate(-180deg)'}}> 
+            <Box style={{ transform: 'rotate(-180deg)' }}>
+                <Typography variant='h2' sx={{ textAlign: 'center',fontWeight: '800', letterSpacing: '2px' }}>RULES</Typography>
+                {/* <List sx={{ mt: 5, ml: 15 }}>
                 <ListItem>
                     <ListItemIcon sx={{ height: '10px', width: '10px', }}>
                         <FaCircle />
@@ -167,63 +169,66 @@ export default function Home() {
                     </ListItemText>
                 </ListItem>
             </List> */}
-            <Grid container sx={{ mt: 5 }}>
-                <Grid item lg={2}>
+                <Grid container sx={{ mt: 9 }}>
+                    <Grid item lg={2}>
+                    </Grid>
+                    <Grid item lg={4}>
+                        <Typography variant='body1' sx={{ fontWeight: '900', color: '#FCFFA3' }}>What is Breeding?</Typography>
+                        <br />
+                        <Typography variant='body2' sx={{ fontWeight: '400', color: '#FCFFA3' }}>2 or 3 Driews of the Gen-1 can be crossed to mint a custom Driew that has traits of the parent Driews. These are called ‘Cross Driews’.
+                            <br />
+                            <br />Cross Driews can be a result of :
+                            <br />1 Human x 1 Robot
+                            <br />1 Robot x 1 Animal
+                            <br />1 Animal x 1 Human
+                            <br />1 Human x 1 Robot x 1 Animal (Super Driew)
+                        </Typography>
+                        <br />
+                        <Typography variant='body1' sx={{ fontWeight: '900', color: '#FCFFA3' }}>Rarity</Typography>
+                        <br />
+                        <Typography variant='body2' sx={{ fontWeight: '400', color: '#FCFFA3' }}>There are 9 Rare Driews in Gen-1.
+                            <br />DH 23, 34, 45
+                            <br />DR 23, 34, 45
+                            <br />DA 23, 34, 45
+                            <br />
+                            <br />When a Rare Driew is crossed with 1 or more Driews or Rare Driews, a
+                            <br />twin is born. These are the rarest cross Driews.
+                        </Typography>
+                    </Grid>
+                    <Grid item lg={1}>
+                    </Grid>
+                    <Grid item lg={4}>
+                        <Typography variant='body1' sx={{ fontWeight: '900', color: '#FCFFA3' }}>How many breeds per wallet ?</Typography>
+                        <Typography variant='body2' sx={{ fontWeight: '400', color: '#FCFFA3' }}>Every wallet can perform ‘breed’ twice.</Typography>
+                        <br />
+                        <Typography variant='body1' sx={{ fontWeight: '900', color: '#FCFFA3' }}>How to know which Driews are not Breeded?</Typography>
+                        <Typography variant='body2' sx={{ fontWeight: '400', color: '#FCFFA3' }}>
+                            <Link href="https://docs.google.com/spreadsheets/d/1nGR1YXyXeyPQBCn0VasOo01ZXww_0rIBLbLAbype8ao/edit?usp=sharing" target="_blank" sx={{ color: '#FCFFA3' }}>Check HERE</Link>
+                        </Typography>
+                        <br />
+                        <Typography variant='body1' sx={{ fontWeight: '900', color: '#FCFFA3' }}>Population</Typography>
+                        <Typography variant='body2' sx={{ fontWeight: '400', color: '#FCFFA3' }}>Cross Driews - 30
+                            <br />Super Driews - 10
+                            <br />Rare Driews - 7
+                        </Typography>
+                        <br />
+                        <Typography variant='body1' sx={{ fontWeight: '900', color: '#FCFFA3' }}>IMPORTANT</Typography>
+                        <Typography variant='body2' sx={{ fontWeight: '400', color: '#FCFFA3' }}>Every Driew can only participate once in the breeding activity.</Typography>
+                        <br />
+                        <Typography variant='body1' sx={{ fontWeight: '900', color: '#FCFFA3' }}>Are the parent Driews burnt after breeding?</Typography>
+                        <Typography variant='body2' sx={{ fontWeight: '400', color: '#FCFFA3' }}>NO</Typography>
+                    </Grid>
                 </Grid>
-                <Grid item lg={4}>
-                    <Typography variant='body1'  sx={{fontWeight:'900', color:'#FCFFA3'}}>What is Breeding?</Typography>
-                    <br />
-                    <Typography variant='body2' sx={{fontWeight:'400',color:'#FCFFA3'}}>2 or 3 Driews of the Gen-1 can be crossed to mint a custom Driew that has traits of the parent Driews. These are called ‘Cross Driews’. 
-                    <br/>
-                    <br/>Cross Driews can be a result of : 
-                    <br/>1 Human x 1 Robot
-                    <br/>1 Robot x 1 Animal
-                    <br/>1 Animal x 1 Human
-                    <br/>1 Human x 1 Robot x 1 Animal (Super Driew)
-                    </Typography>
-                    <br/>
-                    <Typography variant='body1'  sx={{fontWeight:'900', color:'#FCFFA3'}}>Rarity</Typography>
-                    <br />
-                    <Typography variant='body2' sx={{fontWeight:'400',color:'#FCFFA3'}}>There are 9 Rare Driews in Gen-1. 
-                    <br/>DH 23, 34, 45
-                    <br/>DR 23, 34, 45
-                    <br/>DA 23, 34, 45
-                    <br/>
-                    <br/>When a Rare Driew is crossed with 1 or more Driews or Rare Driews, a
-                    <br/>twin is born. These are the rarest cross Driews.
-                    </Typography>
-                </Grid>
-                <Grid item lg={1}>
-                </Grid>
-                <Grid item lg={4}>
-                    <Typography variant='body1' sx={{fontWeight:'900', color:'#FCFFA3'}}>How many breeds per wallet ?</Typography>
-                    <Typography variant='body2' sx={{fontWeight:'400',color:'#FCFFA3'}}>Every wallet can perform ‘breed’ twice.</Typography>
-                    <br/>
-                    <Typography variant='body1' sx={{fontWeight:'900', color:'#FCFFA3'}}>How to know which Driews are not Breeded?</Typography>
-                    <Typography variant='body2' sx={{fontWeight:'400',color:'#FCFFA3'}}>Check HERE</Typography>
-                    <br/>
-                    <Typography variant='body1' sx={{fontWeight:'900', color:'#FCFFA3'}}>Population</Typography>
-                    <Typography variant='body2' sx={{fontWeight:'400',color:'#FCFFA3'}}>Cross Driews - 30
-                    <br/>Super Driews - 10
-                    <br />Rare Driews - 7
-                    </Typography>
-                    <br/>
-                    <Typography variant='body1' sx={{fontWeight:'900', color:'#FCFFA3'}}>IMPORTANT</Typography>
-                    <Typography variant='body2' sx={{fontWeight:'400',color:'#FCFFA3'}}>Every Driew can only participate once in the breeding activity.</Typography>
-                    <br />
-                    <Typography variant='body1' sx={{fontWeight:'900', color:'#FCFFA3'}}>Are the parent Driews burnt after breeding?</Typography>
-                    <Typography variant='body2' sx={{fontWeight:'400',color:'#FCFFA3'}}>NO</Typography>
-                </Grid>
-            </Grid>
 
-            <Box sx={{ textAlign: 'center', mt: 8 }}>
-                {/* {isLoggedIn === false ? <Button variant='contained' size='large' onClick={loadWeb3Modal} sx={{ zIndex: 1 }} >Connect</Button>
+                <Box sx={{ textAlign: 'center', mt: 13 }}>
+                    {/* {isLoggedIn === false ? <Button variant='contained' size='large' onClick={loadWeb3Modal} sx={{ zIndex: 1 }} >Connect</Button>
                         :
                         <Button variant='contained' size='large' onClick={logoutOfWeb3Modal} sx={{ zIndex: 1 }}>Disconnect</Button>
                     } */}
 
-                <Button variant='contained'  onClick={loadWeb3Modal} sx={{ zIndex: 1,backgroundColor:'#FCFFA3',color:'#000',height:'79.47px',width:'238.51px',borderRadius:'28px' }} ><Typography variant='h3'>Connect</Typography></Button>
-                {/* <Button variant='contained' size='large' onClick={showNotification} sx={{ zIndex: 1 }} >Demo Notification</Button> */}
+                    <Button variant='contained' onClick={loadWeb3Modal} sx={{ zIndex: 1, backgroundColor: '#FCFFA3', color: '#000', height: '79.47px', width: '238.51px', borderRadius: '28px' }} ><Typography variant='h3'>Connect</Typography></Button>
+                    {/* <Button variant='contained' size='large' onClick={showNotification} sx={{ zIndex: 1 }} >Demo Notification</Button> */}
+                </Box>
             </Box>
         </Box>
     );

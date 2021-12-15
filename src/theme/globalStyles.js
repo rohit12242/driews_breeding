@@ -25,8 +25,8 @@ const GlobalStyles = withStyles((theme) => ({
     '#root': {
       width: '100%',
       height: '100%',
-      background: 'radial-gradient(92.09% 92.09% at 50%  7.91% , #27720D 0%, #BE3330 41.15%, #6242E6 67.19%, #000000 98.96%);',
-      transform: 'rotate(-180deg)'
+      // background: 'radial-gradient(92.09% 92.09% at 50%  7.91% , #27720D 0%, #BE3330 41.15%, #6242E6 67.19%, #000000 98.96%);',
+      // transform: 'rotate(-180deg)'
     },
     input: {
       '&[type=number]': {

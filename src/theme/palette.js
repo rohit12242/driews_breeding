@@ -115,6 +115,7 @@ const palette = {
   text: { primary: '#fff', secondary: GREY[600], disabled: GREY[500] },
   // background: { paper: '#fff', default: '#000', neutral: GREY[200] },
   background: { paper: '#fff', default: '#000', neutral: GREY[200] },
+  // background: 'radial-gradient(92.09% 92.09% at 50%  7.91% , #27720D 0%, #BE3330 41.15%, #6242E6 67.19%, #000000 98.96%)',
   action: {
     active: GREY[600],
     hover: GREY[500_8],
