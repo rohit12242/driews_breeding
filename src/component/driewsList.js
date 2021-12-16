@@ -106,13 +106,13 @@ export default function DriewsList() {
                     temp.breedingStatus = await breedingStatus(data[i].token_id)
                     driews.push(temp);
                     //seggrating based on trait
-                    if (data[i].traits[0].value === 'Robot') {
+                    if (data[i].traits[0].value === 'Robot' || data[i].traits[1].value === 'Robot') {
                         robotList.push(temp);
                     }
-                    if (data[i].traits[0].value === 'Animal') {
+                    if (data[i].traits[0].value === 'Animal' || data[i].traits[1].value === 'Animal') {
                         animalList.push(temp);
                     }
-                    if (data[i].traits[0].value === 'Human') {
+                    if (data[i].traits[0].value === 'Human'|| data[i].traits[1].value === 'Human') {
                         humanList.push(temp);
                     }
                 }
