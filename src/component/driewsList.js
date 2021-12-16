@@ -82,7 +82,7 @@ export default function DriewsList() {
         const getNfts = async () => {
             // opensea retriveing asset api
             //mainnet
-            const result = await axios.get(`https://api.opensea.io/api/v1/assets?owner=${address}&asset_contract_address=0x495f947276749Ce646f68AC8c248420045cb7b5e&order_direction=desc&offset=0&limit=20`);
+            const result = await axios.get(`https://api.opensea.io/api/v1/assets?owner=${address}&asset_contract_address=0x495f947276749Ce646f68AC8c248420045cb7b5e&order_direction=desc&offset=0&collection=driews`);
             //rinkbey testnet
             // const result = await axios.get(`https://rinkeby-api.opensea.io/api/v1/assets?owner=${address}&asset_contract_address=0x88b48f654c30e99bc2e4a1559b4dcf1ad93fa656&order_direction=desc&offset=0&limit=20`);
             // console.log("value of http request :::", result.data);
