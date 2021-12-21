@@ -386,8 +386,10 @@ export default function DriewsList() {
                 "description": "Breeded Driews",
                 "external_url": "https://example.com/?token_id=1",
                 "image": "https://driewsimage.blob.core.windows.net/driewsnft/AH.jpg",
+                "secondImg": "https://driewsimage.blob.core.windows.net/driewsnft/AH.jpg",
                 "name": "AH",
-                "animationFlag": false
+                "animationFlag": false,
+                "imgFlip": false
             }
         }
         if (type === 'HR') {
@@ -398,8 +400,10 @@ export default function DriewsList() {
                 "description": "Breeded Driews",
                 "external_url": "https://example.com/?token_id=1",
                 "image": "https://driewsimage.blob.core.windows.net/driewsnft/HR.jpg",
+                "secondImg": "https://driewsimage.blob.core.windows.net/driewsnft/HR.jpg",
                 "name": "HR",
-                "animationFlag": false
+                "animationFlag": false,
+                "imgFlip": false
             }
         }
         if (type === 'AR') {
@@ -410,8 +414,10 @@ export default function DriewsList() {
                 "description": "Breeded Driews",
                 "external_url": "https://example.com/?token_id=1",
                 "image": "https://driewsimage.blob.core.windows.net/driewsnft/RA.jpg",
+                "secondImg": "https://driewsimage.blob.core.windows.net/driewsnft/RA.jpg",
                 "name": "AR",
-                "animationFlag": false
+                "animationFlag": false,
+                "imgFlip": false
             }
         }
         if (type === 'AHR') {
@@ -422,8 +428,10 @@ export default function DriewsList() {
                 "description": "Breeded Driews",
                 "external_url": "https://example.com/?token_id=1",
                 "image": "https://driewsimage.blob.core.windows.net/driewsnft/HRA.jpg",
+                "secondImg": "https://driewsimage.blob.core.windows.net/driewsnft/HRA.jpg",
                 "name": "AHR",
-                "animationFlag": false
+                "animationFlag": false,
+                "imgFlip": false
             }
         }
         if (type === 'RARE') {
@@ -434,8 +442,10 @@ export default function DriewsList() {
                 "description": "Breeded Driews",
                 "external_url": "https://example.com/?token_id=1",
                 "image": "https://driewsimage.blob.core.windows.net/driewsnft/Rare_final.jpg",
+                "secondImg": "https://driewsimage.blob.core.windows.net/driewsnft/Rare_final.jpg",
                 "name": "RARE",
-                "animationFlag": false
+                "animationFlag": false,
+                "imgFlip": false
             }
         }
 
@@ -447,8 +457,10 @@ export default function DriewsList() {
                 "description": "Minted outside breeding",
                 "external_url": "https://example.com/?token_id=1",
                 "image": "https://driewsrestapi.azurewebsites.net/animation",
+                "secondImg": "https://driewsrestapi.azurewebsites.net/animation",
                 "name": "Minted",
-                "animationFlag": true
+                "animationFlag": true,
+                "imgFlip": false
             }
         }
         await window.web3.currentProvider.enable();
