@@ -469,9 +469,9 @@ export default function DriewsList() {
         const totalSupply = await erc721Contract.methods.totalSupply().call();
         try {
             //my azure
-            // const result = await axios.post(`https://restapidriews.azurewebsites.net/api/metadata/${totalSupply-1}`, data);
+            const result = await axios.post(`https://restapidriews.azurewebsites.net/api/metadata/${totalSupply-1}`, data);
             //vinay azure
-            const result = await axios.post(`https://driewsrestapi.azurewebsites.net/api/metadata/${totalSupply - 1}`, data);
+            // const result = await axios.post(`https://driewsrestapi.azurewebsites.net/api/metadata/${totalSupply - 1}`, data);
             console.log("result value::", result);
             // const result = await axios.post(`http://localhost:4000/api/metadata/${totalSupply-1}`, data);
             // console.log("value of response::", result.data);
