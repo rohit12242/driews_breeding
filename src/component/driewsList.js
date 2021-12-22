@@ -456,8 +456,8 @@ export default function DriewsList() {
                 ],
                 "description": "Minted outside breeding",
                 "external_url": "https://example.com/?token_id=1",
-                "image": "https://driewsrestapi.azurewebsites.net/animation",
-                "secondImg": "https://driewsrestapi.azurewebsites.net/animation",
+                "image": "https://driewsnft.blob.core.windows.net/driews/X Driew 0.png",
+                "secondImg": "https://driewsnft.blob.core.windows.net/driews/X Driew 0.png",
                 "name": "Minted",
                 "animationFlag": true,
                 "imgFlip": false
