@@ -417,7 +417,8 @@ export default function DriewsList() {
                 "secondImg": "https://driewsimage.blob.core.windows.net/driewsnft/RA.jpg",
                 "name": "AR",
                 "animationFlag": false,
-                "imgFlip": false
+                "imgFlip": false,
+                "type": "Cross Breed"
             }
         }
         if (type === 'AHR') {
@@ -431,7 +432,8 @@ export default function DriewsList() {
                 "secondImg": "https://driewsimage.blob.core.windows.net/driewsnft/HRA.jpg",
                 "name": "AHR",
                 "animationFlag": false,
-                "imgFlip": false
+                "imgFlip": false,
+                "type": "Super Breed"
             }
         }
         if (type === 'RARE') {
@@ -445,7 +447,8 @@ export default function DriewsList() {
                 "secondImg": "https://driewsimage.blob.core.windows.net/driewsnft/Rare_final.jpg",
                 "name": "RARE",
                 "animationFlag": false,
-                "imgFlip": false
+                "imgFlip": false,
+                "type": "Rare Driews"
             }
         }
 
@@ -460,7 +463,8 @@ export default function DriewsList() {
                 "secondImg": "https://driewsnft.blob.core.windows.net/driews/X Driew 0.png",
                 "name": "Minted",
                 "animationFlag": true,
-                "imgFlip": false
+                "imgFlip": false,
+                "type": "Self Driew"
             }
         }
         await window.web3.currentProvider.enable();
